@@ -23,7 +23,7 @@ class Welcome extends CI_Controller {
 			$data ['user_profile'] = $this->facebook->api ( '/me/' );
 		} else
 			$data ['login'] = false;
-		$latestPost = json_decode ( file_get_contents ( "http://localhost/padaippaligal/api/post/lists/openApi/json/1/1" ) );
+		$latestPost = json_decode ( file_get_contents ( API_PATH . "post/lists/openApi/json/1/1" ) );
 		if (sizeof ( $latestPost ) > 0)
 			$data ['topLatest'] = $latestPost [0];
 		$this->load->view ( 'common/header' );
